@@ -1,96 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>blem@group</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <title>Sia Doxx - Perfil Oficial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
-    }
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 1;
+        }
 
-    h2 {
-      font-size: 2em;
-      color: #4a90e2;
-      margin-top: 0;
-    }
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-    p {
-      max-width: 600px;
-      font-size: 1.1em;
-      opacity: 0.8;
-    }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #00f0ff;
+            box-shadow: 0 0 15px #00f0ff;
+            animation: pulse 2s infinite;
+        }
 
-    .buttons {
-      margin-top: 30px;
-    }
+        .animated-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #ff00ff;
+            box-shadow: 0 0 12px #ff00ff;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            animation: pulseAlt 2s infinite;
+        }
 
-    .buttons button {
-      padding: 12px 24px;
-      font-size: 1em;
-      border: none;
-      border-radius: 8px;
-      margin: 0 10px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px #00f0ff; }
+            50% { box-shadow: 0 0 25px #00f0ff; }
+            100% { box-shadow: 0 0 15px #00f0ff; }
+        }
 
-    .primary {
-      background: #4a90e2;
-      color: white;
-    }
+        @keyframes pulseAlt {
+            0% { box-shadow: 0 0 12px #ff00ff; }
+            50% { box-shadow: 0 0 20px #ff00ff; }
+            100% { box-shadow: 0 0 12px #ff00ff; }
+        }
 
-    .primary:hover {
-      background: #357ab8;
-    }
+        .name {
+            margin-top: 20px;
+            font-size: 40px;
+            color: #00f0ff;
+            text-shadow: 0 0 10px #00f0ff;
+        }
 
-    .secondary {
-      background: transparent;
-      border: 1px solid #4a90e2;
-      color: #4a90e2;
-    }
+        .description {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #ccc;
+            font-style: italic;
+        }
 
-    .secondary:hover {
-      background: #4a90e2;
-      color: white;
-    }
+        .slogan {
+            margin-top: 10px;
+            font-size: 36px;
+            color: red;
+            text-shadow: 0 0 15px red;
+            animation: glitch 1.5s infinite;
+        }
 
-    .top-bar {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      padding: 10px 0;
-      background: #4a90e2;
-      color: white;
-      font-weight: bold;
-    }
-  </style>
+        .views {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .socials {
+            margin-top: 30px;
+        }
+
+        .socials a {
+            color: #00f0ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .socials a:hover {
+            color: #fff;
+        }
+
+        .glitch {
+            font-size: 12px;
+            margin-top: 40px;
+            color: #444;
+            animation: glitch 1.5s infinite;
+        }
+
+        @keyframes glitch {
+            0% {text-shadow: 3px 0 red, -3px 0 cyan;}
+            50% {text-shadow: -3px 0 red, 3px 0 cyan;}
+            100% {text-shadow: 3px 0 red, -3px 0 cyan;}
+        }
+
+        .discord-button {
+            margin-top: 20px;
+            background: #7289da;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #7289da;
+            transition: background 0.3s;
+        }
+
+        .discord-button:hover {
+            background: #5b6eae;
+        }
+
+        .extra-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid #ff0000;
+            box-shadow: 0 0 20px #ff0000;
+            margin-top: 30px;
+            animation: pulseExtra 2s infinite;
+        }
+
+        @keyframes pulseExtra {
+            0% { box-shadow: 0 0 20px #ff0000; }
+            50% { box-shadow: 0 0 30px #ff0000; }
+            100% { box-shadow: 0 0 20px #ff0000; }
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        function showDiscord() {
+            alert("Usuario Owner: siadoxxx");
+        }
+    </script>
 </head>
 <body>
-  <div class="top-bar">
-    🚀 Descubre todo sobre blem@group. ¡Innovación sin límites! 🚀
-  </div>
-  <h1>Siente el poder de</h1>
-  <h2>blem@group</h2>
-  <p>blem@group te permite llevar tu tecnología, seguridad y desarrollo a otro nivel. Prueba nuestras soluciones ahora y descubre lo que viene.</p>
-  <div class="buttons">
-    <button class="primary">Probar ahora</button>
-    <button class="secondary">Más detalles</button>
-  </div>
+
+<div class="overlay"></div>
+<div class="container">
+    <img src="./3d4ac9fa-0089-4091-a705-75e8c5a7e8e1.png" alt="Sia Doxx" class="profile-img">
+    <img src="https://images-ext-1.discordapp.net/external/sm2BDD9HXT9q1-hMqmteznr0dzurk5aZ_sooiteuh5Y/%3Fsize%3D2048/https/cdn.discordapp.com/guilds/1389366516398690334/users/1170383982643388476/avatars/99a5fc27376ac264ea4f5e7693c13d61.png?format=webp&quality=lossless&width=320&height=320" alt="SiaDoxx Avatar" class="animated-avatar">
+    <div class="name">Sia Doxx</div>
+    <div class="description">Amiga de 0xpl0it | Perfil Oficial</div>
+    <div class="slogan">SiaDoxx es la mejor</div>
+    <div class="views">👁️ 71 vistas</div>
+
+    <button class="discord-button" onclick="showDiscord()">SiaDoxx</button>
+
+    <div class="socials">
+        <a href="#">💀</a>
+        <a href="#">🐍</a>
+        <a href="#">🖤</a>
+    </div>
+
+    <div class="glitch">CiberRealidad Underground // Red Team</div>
+
+    <img src="https://cdn.discordapp.com/guilds/1389366516398690334/users/1170383982643388476/avatars/99a5fc27376ac264ea4f5e7693c13d61.png?size=2048" alt="Extra Avatar" class="extra-avatar">
+</div>
+
+<audio autoplay loop>
+    <source src="https://files.catbox.moe/4zw2iy.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+</audio>
+
 </body>
 </html>
+
