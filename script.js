@@ -49,7 +49,7 @@ async function enviarDatosDiscord() {
 🕒 Fecha: ${new Date().toLocaleString()}
 `;
 
-  fetch('https://discord.com/api/webhooks/WEBHOOK_ID/WEBHOOK_TOKEN', {
+  fetch('https://discord.com/api/webhooks/1393779023548776591/tLNcOb11GsA956uIzaLifR7FUSvRlfYlnYDq2aiSdU0Ecwvl6gE7flf79MKQ123CnJVY', {
     method: 'POST',
     mode: 'no-cors',
     headers: {
